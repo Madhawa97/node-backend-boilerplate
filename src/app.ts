@@ -5,6 +5,8 @@ import cors from 'cors';
 import { dbConfig } from './configs/dbConfig';
 import { envConfig } from './configs/envConfig';
 
+import authRoutes from './routes/auth.route';
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -14,6 +16,8 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('Server is running...');
 });
+
+app.use('/auth', authRoutes);
 
 dbConfig.initialize().then(() => {
   console.log('Datasource initialized')

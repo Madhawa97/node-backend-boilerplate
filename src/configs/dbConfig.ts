@@ -8,6 +8,8 @@ export const dbConfig = new DataSource({
   username: envConfig.DB_USERNAME,
   password: envConfig.DB_PASSWORD,
   database: envConfig.DB_DATABASE,
-  entities: []
+  entities: ['src/entities/*.ts'],
+  logging: false,
+  synchronize: true
 });
 
