@@ -1,4 +1,3 @@
-// auth.service.ts
 import { User } from '../entities/User.entity';
 import { hash, compare } from 'bcryptjs';
 import { dbConfig } from '../configs/dbConfig';
